@@ -2,6 +2,25 @@ const sideBtn = document.getElementById("sideBtn");
 const asideBar = document.getElementById("asideBar");
 const heartCount = document.getElementById('heartCount');
 const hearts = document.getElementsByClassName('fa-heart');
+const copyBtns = document.getElementsByClassName('copyBtns');
+const copyCount = document.getElementById('copyCount');
+
+for (let btn of copyBtns) {
+  btn.addEventListener("click", () => {
+
+    let card = btn.parentElement;
+    while (card && !card.querySelector("h3")) {
+      card = card.parentElement;
+    }
+
+    const number = card.querySelector("h3").innerText;
+    alert('Number is Copied: ' + number);
+    copyCount.innerText = parseInt(copyCount.innerText) + 1;
+    navigator.clipboard.writeText(number);
+
+    
+  });
+}
 
 for (let heart of hearts) {
   heart.addEventListener('click', (e) => {
