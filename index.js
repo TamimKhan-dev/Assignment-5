@@ -1,5 +1,19 @@
 const sideBtn = document.getElementById("sideBtn");
 const asideBar = document.getElementById("asideBar");
+const heartCount = document.getElementById('heartCount');
+const hearts = document.getElementsByClassName('fa-heart');
+
+for (let heart of hearts) {
+  heart.addEventListener('click', (e) => {
+    e.preventDefault();
+    heartCount.innerText = parseInt(heartCount.innerText) + 1;
+    if (heart.classList.contains('fa-regular')) {
+      heart.classList.toggle('fa-solid');
+      heart.classList.toggle('text-red-500');
+    } 
+  });
+};
+
 
 sideBtn.addEventListener("click", (e) => {
   e.preventDefault();
