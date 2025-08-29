@@ -38,7 +38,7 @@ for (let callBtn of callBtns) {
        let cardContainer = callBtn.parentElement.parentElement;
        const h2 = cardContainer.querySelector('h2');
        const h3 = cardContainer.querySelector('h3');
-       alert('Calling');
+       alert(`📞Calling ${h2.innerText} ${h3.innerText}...`);
       historyContainer.innerHTML += `
             <div class="flex justify-between items-center bg-gray-200 p-3 rounded-lg mb-3">
                 <div>
@@ -50,7 +50,7 @@ for (let callBtn of callBtns) {
             </div>
       `
     } else {
-      alert('Insuffient Coins')
+      alert(`❌You don't have enough coin: at least 20 coins are required.`)
     }
     
   });
